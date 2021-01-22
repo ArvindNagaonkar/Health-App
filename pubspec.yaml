@@ -33,6 +33,7 @@ dependencies:
   connectivity: ^2.0.2
   flutter_svg: ^0.18.0
   shared_preferences: ^0.5.7+1
+  fl_chart: ^0.12.2
 
 dev_dependencies:
   flutter_test:

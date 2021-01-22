@@ -35,7 +35,11 @@ class _WelcomeAndIntroPageState extends State<WelcomeAndIntroPage> {
           ],
         )),
     Container(
+      width: double.infinity,
       color: Color(0xFF7400b8),
+      child: Column(children: [
+        
+      ],),
     ),
     Container(
       color: Color(0xFF48bfe3),

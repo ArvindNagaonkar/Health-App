@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:health_app/widgets/Home%20Page/homePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
@@ -89,7 +90,7 @@ class _HomePageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WelcomeAndIntroPage(),
+      body: HomePage(),
       //connection
       //     ? (fisrtTime ? WelcomeAndIntroPage() : HomePage())
       //     : NetworkError()
