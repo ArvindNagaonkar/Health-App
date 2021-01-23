@@ -36,8 +36,8 @@ class _LineChartGraphState extends State<LineChartGraph> {
           ),
         ),
         SizedBox(
-          width: 60,
-          height: 34,
+          width: 180,
+          height: 38,
           child: FlatButton(
             onPressed: () {
               setState(() {
@@ -45,9 +45,9 @@ class _LineChartGraphState extends State<LineChartGraph> {
               });
             },
             child: Text(
-              'avg',
+              'Respiratory rate',
               style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   color:
                       showAvg ? Colors.white.withOpacity(0.5) : Colors.white),
             ),
