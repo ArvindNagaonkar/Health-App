@@ -1,7 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import "package:flutter/material.dart";
-import 'package:health_app/widgets/Home%20Page/local%20widgets/dataConatiners.dart';
-import 'package:health_app/widgets/Home%20Page/local%20widgets/header.dart';
-import 'local widgets/Chart.dart';
+import 'package:health_app/widgets/Home Page/Status page/statusPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,6 +8,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _page = 0;
+  GlobalKey _bottomNavigationKey = GlobalKey();
   List<Color> gradientColors = [
     const Color(0xff23b6e6),
     const Color(0xff02d39a),
@@ -18,49 +19,59 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-          Header(
-            headline: "You're healthy\nToday",
-            key: Key("1234"),
+      body: StatusPage(),
+      bottomNavigationBar: CurvedNavigationBar(
+        key: _bottomNavigationKey,
+        index: 0,
+        height: 55,
+        items: <Widget>[
+          Icon(
+            Icons.timeline,
+            size: 30,
+            color: Colors.white,
           ),
-          Positioned(
-            top: size.height * 0.28,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    DataContainer(
-                      headline: "Heart Rate",
-                      data: "78",
-                      dataColor: Color(0xFFeb596e),
-                      unit: "Beats/min",
-                      key: Key("value123"),
-                    ),
-                    DataContainer(
-                      headline: "Body Temperature",
-                      data: "28",
-                      dataColor: Color(0xFF51c2d5),
-                      unit: "Celsius",
-                      key: Key("value567"),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: size.width * 0.93,
-                    child: LineChartGraph(),
-                  ),
-                ),
-              ],
-            ),
-          )
+          Icon(
+            Icons.add,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.mail,
+            size: 30,
+            color: Colors.white,
+          ),
         ],
+        color: Colors.blueAccent,
+        buttonBackgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.transparent,
+        animationCurve: Curves.easeInOut,
+        animationDuration: Duration(milliseconds: 600),
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+        letIndexChange: (index) => true,
       ),
+      // body: Container(
+      //   color: Colors.blueAccent,
+      //   child: Center(
+      //     child: Column(
+      //       children: <Widget>[
+      //         Text(_page.toString(), textScaleFactor: 10.0),
+      //         RaisedButton(
+      //           child: Text('Go To Page of index 1'),
+      //           onPressed: () {
+      //             final CurvedNavigationBarState navBarState =
+      //                 _bottomNavigationKey.currentState;
+      //             navBarState.setPage(1);
+      //           },
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // )
     );
   }
 }

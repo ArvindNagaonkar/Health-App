@@ -16,22 +16,22 @@ class _LineChartGraphState extends State<LineChartGraph> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Stack(
       children: <Widget>[
-        AspectRatio(
-          aspectRatio: 1.70,
-          child: Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(18),
-                ),
-                color: Color(0xff232d37)),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  right: 18.0, left: 12.0, top: 24, bottom: 12),
-              child: LineChart(
-                showAvg ? avgData() : mainData(),
+        Container(
+          width: size.width * 0.95,
+          height: size.height * 0.3,
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(18),
               ),
+              color: Color(0xff232d37)),
+          child: Padding(
+            padding: const EdgeInsets.only(
+                right: 18.0, left: 12.0, top: 24, bottom: 12),
+            child: LineChart(
+              showAvg ? avgData() : mainData(),
             ),
           ),
         ),
@@ -87,11 +87,11 @@ class _LineChartGraphState extends State<LineChartGraph> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 2:
-                return 'MAR';
+                return '1m';
               case 5:
-                return 'JUN';
+                return '2m';
               case 8:
-                return 'SEP';
+                return '3m';
             }
             return '';
           },
@@ -107,11 +107,11 @@ class _LineChartGraphState extends State<LineChartGraph> {
           getTitles: (value) {
             switch (value.toInt()) {
               case 1:
-                return '10k';
+                return '1k';
               case 3:
-                return '30k';
+                return '3k';
               case 5:
-                return '50k';
+                return '5k';
             }
             return '';
           },

@@ -4,7 +4,7 @@ import 'package:health_app/widgets/Home%20Page/homePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import 'widgets/Welcome_Intro Page/wel_and_intro.dart';
+// import 'widgets/Welcome_Intro Page/wel_and_intro.dart';
 
 void main() {
   runApp(MyApp());
