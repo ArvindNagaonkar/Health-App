@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import "package:flutter/material.dart";
 import 'package:health_app/widgets/Home Page/Status page/statusPage.dart';
+import 'package:health_app/widgets/Home%20Page/medicine%20page/medicinePage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StatusPage(),
+      body: MedicinePage(),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: 0,
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         buttonBackgroundColor: Colors.blueAccent,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 600),
+        animationDuration: Duration(milliseconds: 400),
         onTap: (index) {
           setState(() {
             _page = index;
