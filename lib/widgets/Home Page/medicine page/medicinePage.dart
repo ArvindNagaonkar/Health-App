@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:health_app/widgets/Home%20Page/local%20widgets/header.dart';
-import 'package:health_app/widgets/Home%20Page/medicine%20page/medicineConatiner.dart';
+import 'package:health_app/widgets/Home Page/local widgets/header.dart';
+import 'package:health_app/widgets/Home Page/medicine page/medicineConatiner.dart';
 
 class MedicinePage extends StatelessWidget {
   const MedicinePage({Key key}) : super(key: key);

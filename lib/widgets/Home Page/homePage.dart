@@ -1,7 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import "package:flutter/material.dart";
-import 'package:health_app/widgets/Home Page/Status page/statusPage.dart';
-import 'package:health_app/widgets/Home%20Page/medicine%20page/medicinePage.dart';
+// import 'package:health_app/widgets/Home Page/Status page/statusPage.dart';
+import 'package:health_app/widgets/Home%20Page/mail%20page/mailPage.dart';
+// import 'package:health_app/widgets/Home%20Page/medicine%20page/medicinePage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MedicinePage(),
+      body: MailPage(),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: 0,
